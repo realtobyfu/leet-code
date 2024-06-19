@@ -1,16 +1,18 @@
-# This is a sample Python script.
+def binarySearch(arr, target):
+    L, r = 0, len(arr) - 1
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+    while L <= r:
+        m = (L + r) // 2
+
+        if arr[m] == target:
+            return m
+        elif arr[m] > target:
+            r = m - 1
+        else:
+            L = m + 1
+
+    return
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    assert (binarySearch([1, 3, 5, 6, 7], 3) == 1)
